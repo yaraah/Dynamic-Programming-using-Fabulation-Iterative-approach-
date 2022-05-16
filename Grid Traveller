@@ -1,0 +1,15 @@
+import java.util.Arrays;
+public static long GridTraveller(int m ,int n)
+  {
+    long[][] Arr=new long[m+1][n+1];
+    Arrays.stream(Arr).foreach(a->Arrays.fill(a,0));
+    Arr[1][1]=1;
+    for(int i=0;i<=m;i++){
+      for(int j=0;j<=n;j++){
+        long current=Arr[i][j];
+        Arr[i+1][j]+=current;
+        Arr[i][j+1]+=current;
+        }
+      }
+     return Arr[m][n];
+  }
