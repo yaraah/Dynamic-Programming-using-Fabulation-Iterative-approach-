@@ -1,0 +1,25 @@
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+       int[] num={2,4};
+       
+      System.out.println(CanSum(7,num));
+    }
+    public static boolean CanSum(int TargetSum,int[] numbers)
+    {
+        boolean []Table=new boolean[TargetSum+1];
+        Arrays.fill(Table,false);
+        Table[0]=true;
+        for(int i=0;i<=TargetSum;i++)
+        {
+            if(Table[i]==true){
+                for(int num:numbers)
+                {
+                     if(num+i<=TargetSum) Table[num+i]=true;
+                  //  System.out.println(i+num);}
+                }
+            }
+        }
+        return Table[TargetSum];
+    }
+}
