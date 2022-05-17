@@ -1,0 +1,51 @@
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+      ArrayList<Integer> num=new ArrayList<>();
+       num.add(5);
+       num.add(3);
+       num.add(4);
+      System.out.println(CanSum(7,num));
+    }
+    public static List<Integer> CanSum(int TargetSum,ArrayList<Integer> Table1)
+    {
+        List<List<Integer>> Table=new ArrayList<>((Collections.nCopies(TargetSum+1, null)));
+        ArrayList<Integer> Table2=new ArrayList<>();
+       Table.add(0,new ArrayList<>(Table2));
+      // Table1.add(0,0);
+        for(int i=0;i<=TargetSum;i++)
+        {
+            
+            if(Table.get(i)!=null){
+                //System.out.println(Table.get(3));
+                for(Integer num:Table1)
+                {
+                  //  if(!Table2.contains(num)){
+                    Table.set(3,new ArrayList<>(Table2));
+                    if(Table2.isEmpty()&&!Table2.contains(3))
+                    Table2.add(3);
+                      Table.set(5,new ArrayList<>(Table2)); 
+                      if(!Table2.contains(5)){
+                         // Table2.remove();
+                    Table2.add(5);
+                      }
+                    Table.set(4,new ArrayList<>(Table2)); 
+                      if(Table2.isEmpty())
+                    Table2.add(4);
+                  //  }
+                    
+               // Table2.remove(num);
+                   
+                    
+                    // Table2.remove(num);
+                    //Table.add(num,Table1);
+                    //Table.add(num,Table1); 
+                   //Table1.remove(0);
+                }
+            }
+
+        }
+        System.out.println(Table);
+        return Table.get(TargetSum);
+    }
+}
